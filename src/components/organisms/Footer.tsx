@@ -3,7 +3,7 @@ import SocialIcons from "../atoms/SocialIcon";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#e5e7eb] px-6 md:px-20 py-16">
+    <footer className="bg-white px-6 md:px-20 py-16">
       
       <div className="grid md:grid-cols-3 gap-10">
         
@@ -44,14 +44,18 @@ export default function Footer() {
           {/* Logo */}
           <div className="mt-10">
             <img
-              src="/logo.png" // 👉 apni logo daalo public folder me
+              src="/logo.jpg" 
               alt="logo"
-              className="w-40"
+              className="w-24 h-auto"
             />
           </div>
 
-          <p className="text-sm text-gray-600 mt-2">
-            ©2026 Digimonk Technologies
+          {/* Styled Text */}
+          <p className="text-sm font-semibold mt-2">
+            ©2026{" "}
+            <span className="bg-gradient-to-r from-red-500 to-blue-900 bg-clip-text text-transparent">
+              Tenets Softech
+            </span>
           </p>
         </div>
 

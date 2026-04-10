@@ -11,7 +11,6 @@ type Props = {
 export default function NavLink({ href, label }: Props) {
   const pathname = usePathname();
 
-  // ✅ Fixed active logic
   const isActive =
     href === "/"
       ? pathname === "/"
@@ -23,7 +22,9 @@ export default function NavLink({ href, label }: Props) {
       {/* Text */}
       <span
         className={`transition-colors duration-300 ${
-          isActive ? "text-green-600" : "text-black"
+          isActive
+            ? "text-red-500"
+            : "text-black group-hover:text-blue-900"
         }`}
       >
         {label}
@@ -32,7 +33,7 @@ export default function NavLink({ href, label }: Props) {
       {/* Underline */}
       <span
         className={`
-          absolute left-0 -bottom-1 h-[2px] w-full bg-green-600
+          absolute left-0 -bottom-1 h-[2px] w-full bg-red-500
           transform scale-x-0 origin-right
           transition-transform duration-300 ease-in-out
           
