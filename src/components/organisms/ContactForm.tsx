@@ -19,6 +19,7 @@ export default function ContactForm() {
 
   const [loading, setLoading] = useState(false);
 
+  // ✅ correct change handler
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -30,23 +31,17 @@ export default function ContactForm() {
     }));
   };
 
-  // ✅ FIXED SUBMIT
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // 🔥 important
-
-    console.log("CLICK HUA");
+  // ✅ submit handler
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     try {
       setLoading(true);
 
-      console.log("Sending Data:", formData);
-
       const res = await axios.post(
-        "https://localhost:5000/api/contact", // 🔥 yaha apna real API daalo
+        "https://localhost:5000/api/contact",
         formData
       );
-
-      console.log("API Response:", res.data);
 
       alert("Form submitted successfully ✅");
 
@@ -60,7 +55,7 @@ export default function ContactForm() {
       });
 
     } catch (error) {
-      console.log("Error:", error);
+      console.log(error);
       alert("Something went wrong ❌");
     } finally {
       setLoading(false);
@@ -73,9 +68,9 @@ export default function ContactForm() {
         We would love to hear from you
       </h2>
 
-      {/* ✅ FORM WRAPPER (IMPORTANT FIX) */}
       <form onSubmit={handleSubmit} className="w-[400px] mx-auto">
-        
+
+        {/* ✅ FIXED HERE */}
         <TwoColumnField
           onChange={handleChange}
           values={formData}
@@ -123,17 +118,15 @@ export default function ContactForm() {
         </div>
 
         <div className="text-right text-sm mt-2">
-          Character Left:{" "}
-          <span className="text-red-500">
+          Character Left:
+          <span className="text-red-500 ml-1">
             {1000 - formData.message.length}
           </span>
         </div>
 
         <div className="flex flex-col items-center">
-          {/* 🔥 Test ke liye remove kar sakte ho */}
           <RecaptchaBox />
 
-          {/* ✅ TYPE SUBMIT FIX */}
           <Button
             type="submit"
             className="border border-red-500 text-red-500 py-4 mt-6 px-4 hover:bg-red-500 hover:text-white transition"
@@ -141,11 +134,11 @@ export default function ContactForm() {
             {loading ? "Submitting..." : "Talk to our Solutions Expert!"}
           </Button>
         </div>
+
       </form>
     </div>
   );
 }
-
 
 
 // "use client";
