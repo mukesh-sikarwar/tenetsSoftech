@@ -1,16 +1,11 @@
-import Heading from "../atoms/Heading";
+import Title from "../atoms/ServicesTitle";
 import Paragraph from "../atoms/Paragraph";
 
-export default function ServicesHeroContent() {
+export default function HeroContent() {
   return (
-    <div className="absolute inset-0 flex flex-col justify-center px-10 md:px-20">
-      
-      <Heading text="Services" />
-
-      <Paragraph
-        text="Agility combined with design-led engineering, cloud and analytics driven marketing results in great products, faster"
-      />
-
+    <div className="z-10 max-w-2xl">
+      <Title text="Services" />
+      <Paragraph text="Agility combined with design-led engineering, cloud and analytics driven marketing results in great products, faster" />
     </div>
   );
 }

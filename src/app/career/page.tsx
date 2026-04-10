@@ -1,9 +1,16 @@
+import CareerCTA from "@/components/organisms/CareerCTA";
+import CareersGrid from "@/components/organisms/CareersGrid";
+import ExploreBanner from "@/components/organisms/ExploreBanner";
+import LatestNewsletter from "@/components/organisms/LatestNewsletter";
 import MainLayout from "@/components/templates/MainLayout";
 
 export default function Career() {
   return (
     <MainLayout>
-      <h1 className="text-3xl text-center mt-10">Career Page</h1>
+      <ExploreBanner />
+      <CareersGrid />
+      <CareerCTA />
+      <LatestNewsletter />
     </MainLayout>
   );
 }

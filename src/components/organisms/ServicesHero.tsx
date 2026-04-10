@@ -1,26 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import ServicesHeroContent from "../molecules/ServicesHeroContent";
+import HeroContent from "../molecules/ServicesHeroContent";
 
 export default function ServicesHero() {
   return (
-    <section className="relative w-full h-[320px] md:h-[420px]">
+    <section className="relative w-full h-[300px] md:h-[400px]">
       
       {/* Background Image */}
       <Image
-        src="/services-section.jpeg"
+        src="/image/services-section.jpeg" // 👈 apni image
         alt="services"
         fill
-        priority
-        className="object-cover object-[75%_10%]"
+        className="object-cover"
+        sizes="100vw"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gray-900/40"></div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <ServicesHeroContent />
+      <div className="absolute inset-0 flex items-center px-6 md:px-16">
+        <HeroContent />
+      </div>
 
     </section>
   );

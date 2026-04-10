@@ -1,9 +1,20 @@
+import AboutOurClients from "@/components/organisms/AboutClientLogo";
+import AboutSection from "@/components/organisms/AboutSection";
+import DeliveryLeaderShip from "@/components/organisms/DeliveryLeader";
+import FoundingTeam from "@/components/organisms/FoundingTeam";
+import LatestNewsletter from "@/components/organisms/LatestNewsletter";
+import WhyChooseUs from "@/components/organisms/WhyChooseUs";
 import MainLayout from "@/components/templates/MainLayout";
 
 export default function About() {
   return (
     <MainLayout>
-      <h1 className="text-3xl text-center mt-10">About Page</h1>
+      <AboutSection />
+      <FoundingTeam />
+      <DeliveryLeaderShip /> 
+      <WhyChooseUs />
+      <AboutOurClients />
+      <LatestNewsletter />
     </MainLayout>
   );
 }

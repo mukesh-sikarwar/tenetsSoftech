@@ -1,4 +1,7 @@
+import AboutOurClients from "@/components/organisms/AboutClientLogo";
 import HeroSlider from "@/components/organisms/HeroSlider";
+import HomeClientsSection from "@/components/organisms/HomeClientsSection";
+import TechBanner from "@/components/organisms/HomeTechBanner";
 import OverlayCard from "@/components/organisms/OverlayCard";
 import MainLayout from "@/components/templates/MainLayout";
 
@@ -36,6 +39,9 @@ export default function Home() {
        
 
       </div>
+      <TechBanner />
+      <HomeClientsSection />
+      <AboutOurClients />
 
     </MainLayout>
   );
