@@ -1,3 +1,7 @@
+"use client"; 
+
+import { useEffect } from "react";
+
 import AboutOurClients from "@/components/organisms/AboutClientLogo";
 import AboutSection from "@/components/organisms/AboutSection";
 import DeliveryLeaderShip from "@/components/organisms/DeliveryLeader";
@@ -7,6 +11,11 @@ import WhyChooseUs from "@/components/organisms/WhyChooseUs";
 import MainLayout from "@/components/templates/MainLayout";
 
 export default function About() {
+
+  useEffect(() => {
+    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+  }, []);
+
   return (
     <MainLayout>
       <AboutSection />

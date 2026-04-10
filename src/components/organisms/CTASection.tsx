@@ -10,13 +10,14 @@ export default function CTASection() {
     <section className="relative w-full h-[300px] md:h-[400px]">
       
       {/* Background Image */}
-      <Image
-        src="/image/cta-bg.jpg"
-        alt="cta"
-        fill
-        className="object-cover"
-        sizes="100vw"
-      />
+     <Image
+  src="/image/contact-bg.jpg"
+  alt="cta"
+  fill
+  className="object-cover"
+  sizes="100vw"
+  priority   //  add this (important for hero section)
+/>
 
       {/* Overlay Content */}
       <Overlay>
